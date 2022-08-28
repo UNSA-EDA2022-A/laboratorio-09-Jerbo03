@@ -84,7 +84,7 @@ public class GraphMatrix implements Graph {
     public int countConnectedComponents() {
         this.depthFirstSearch(0);
         new int[] a = new int[this.connectedComponents];
-        System.out.println([this.connectedComponents+1]);
+        System.out.println(a[this.connectedComponents+1]);
         return this.connectedComponents;
     }
 
