@@ -6,7 +6,7 @@ public class GraphMatrix implements Graph {
 
     private int numVertices;
     private int[][] adjacency;
-    private connectedComponents;
+    private int connectedComponents;
 
     public GraphMatrix(int numVertices) {
         this.connectedComponents = 0;
