@@ -6,8 +6,10 @@ public class GraphMatrix implements Graph {
 
     private int numVertices;
     private int[][] adjacency;
+    private int connectedComponents;
 
     public GraphMatrix(int numVertices) {
+        this.connectedComponents = 0;
         this.numVertices = numVertices;
         this.adjacency = new int[numVertices][numVertices];
 
@@ -47,10 +49,12 @@ public class GraphMatrix implements Graph {
     }
 
     public ArrayList<Integer> depthFirstSearch(int n) {
+        this.connectedComponents = 0;
         return this.depthFirstSearch(n, new ArrayList<Integer>());
     }
 
     public ArrayList<Integer> depthFirstSearch(int n, ArrayList<Integer> visited) {
+        this.connectedComponents++;
         visited.add(n);
         for (int i = 0; i < this.numVertices; i++) {
             if (this.adjacency[n][i] == 1 && !visited.contains(i)) {
@@ -78,8 +82,10 @@ public class GraphMatrix implements Graph {
     }
 
     public int countConnectedComponents() {
-
-        return -1;
+        this.depthFirstSearch(0);
+        new int[] a = new int[this.connectedComponents];
+        System.out.println(a[this.connectedComponents+1]);
+        return this.connectedComponents;
     }
 
     public static void main(String args[]) {

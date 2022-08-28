@@ -6,6 +6,7 @@ public class GraphAdjacentList implements Graph {
 
     private ArrayList<Vertex> vertices;
     private int numVertices;
+    private int connectedComponents = 0;
 
     public GraphAdjacentList() {
         vertices = new ArrayList<>();
@@ -86,7 +87,8 @@ public class GraphAdjacentList implements Graph {
     }
 
     public int countConnectedComponents(){
-        return -1;
+        
+        return this.connectedComponents;
     }
 
     public boolean removeVertex(int vertex){
